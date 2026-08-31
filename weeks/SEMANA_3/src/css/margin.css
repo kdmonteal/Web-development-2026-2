@@ -1,0 +1,52 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.box {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box2{
+    background-color: #3498db;
+    color: white;
+    border: 2px solid #2980b9;
+    margin: 20px;  /* Margin applied outside the element */
+    padding: 20px; /* Padding applied inside the element */
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Margin in px */
+.margin-px {
+    margin: 20px;
+}
+
+/* Margin in pt */
+.margin-pt {
+    margin: 15pt;
+}
+
+/* Margin in cm */
+.margin-cm {
+    margin: 1cm;
+}
+
+/* Margin in % */
+.margin-percent {
+    margin: 10%;
+}

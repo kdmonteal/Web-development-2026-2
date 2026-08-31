@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Desarrollo Web 2024</title>
+    <link rel="stylesheet" href="./src/main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://usbcali.edu.co/wp-content/themes/usb_cali/images/web/logos/logo-nav-dark.png" alt="Logo" />
+            </div>
+            <div class="course-info">
+                <h1>Curso Desarrollo Web 2024</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card-container">
+            <div class="card card-one" onclick="redirectToPage('./weeks/SEMANA_1')">
+                <h2>Introducción</h2>
+                <p>Comienza con los conceptos básicos del desarrollo web.</p>
+            </div>
+            <div class="card card-two" onclick="redirectToPage('./weeks/SEMANA_2')">
+                <h2>HTML </h2>
+                <p>Aprende a estructurar tus páginas web.</p>
+            </div>
+            <div class="card card-three" onclick="redirectToPage('./weeks/SEMANA_3')">
+                <h2>CSS </h2>
+                <p>Aprende a estilizar tus páginas web.</p>
+                <!--<h2>JavaScript</h2>
+                <p>Explora la programación y agrega interactividad a tus páginas.</p>-->
+            </div>
+        </section>
+        <section class="card-container">
+            <div class="card card-one" onclick="redirectToPage('./weeks/SEMANA_5')">
+                <h2>CSS3</h2>
+                <p>Aprende a estilizar tus páginas web de forma avanzada.</p>
+            </div>
+            <!--<div class="card card-two">
+                <h2>...</h2>
+                <p>...</p>
+            </div>
+            <div class="card card-three">
+                <h2>...</h2>
+                <p>...</p>
+            </div>-->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Email: kdmarin@usbcali.edu.co</p>
+                <p>Facultad de Ingeniería</p>
+            </div>
+
+            <div class="quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="./weeks/SEMANA_2/">HTML</a></li>
+                    <li><a href="./weeks/SEMANA_3/">CSS</a></li>
+                </ul>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2024 Curso Desarrollo Web. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

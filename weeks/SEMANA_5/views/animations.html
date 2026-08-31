@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Animación CSS</title>
+    <link rel="stylesheet" href="../src/css/animations.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+    <h1>Ejemplos de Animaciones con CSS</h1>
+
+    <!-- Ejemplo de animación -->
+    <div class="animation-example">Animación CSS</div>
+
+    <!-- Botón para pausar/reanudar la animación -->
+    <button id="toggle-animation">Pausar/Reanudar Animación</button>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-animation');
+        const animatedDiv = document.querySelector('.animation-example');
+
+        toggleButton.addEventListener('click', () => {
+            const currentState = getComputedStyle(animatedDiv).animationPlayState;
+            animatedDiv.style.animationPlayState = currentState === 'running' ? 'paused' : 'running';
+        });
+    </script>
+</body>
+</html>

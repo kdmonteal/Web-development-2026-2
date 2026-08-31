@@ -1,0 +1,65 @@
+/* Definición de la animación con @keyframes */
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes escalar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+/* Aplicación de todas las propiedades de animación */
+.animation-example {
+    width: 150px;
+    height: 150px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    border-radius: 10px;
+
+    /* Nombre de la animación */
+    animation-name: girar, escalar;
+
+    /* Duración de la animación */
+    animation-duration: 4s, 2s;
+
+    /* Función de tiempo */
+    animation-timing-function: ease-in-out, linear;
+
+    /* Retraso antes de la animación */
+    animation-delay: 1s, 0.5s;
+
+    /* Número de iteraciones */
+    animation-iteration-count: infinite, 3;
+
+    /* Dirección de la animación */
+    animation-direction: alternate, normal;
+
+    /* Modo de relleno */
+    animation-fill-mode: forwards, backwards;
+
+    /* Estado de reproducción */
+    animation-play-state: running;
+}
+
+/* Estilo del botón */
+#toggle-animation {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-animation:hover {
+    background-color: #45a049;
+}

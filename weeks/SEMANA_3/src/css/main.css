@@ -1,0 +1,95 @@
+ /* Sintaxis CSS y Selectores */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Selectores básicos */
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+}
+
+/* Selectores Simples */
+/* Selecciona un elemento por su ID */
+#simple-selectors {
+    color: #2c3e50;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+/* Selecciona un elemento por su clase */
+.simple {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Selectores Combinadores */
+/* Selecciona los párrafos que son hijos directos de un div con clase "combinator-container" */
+.combinator-container > p {
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+/* Selecciona los spans que están dentro de un párrafo anidado en un div */
+.combinator-container p span {
+    color: #8e44ad;
+    font-style: italic;
+}
+
+/* Selectores de Pseudoclase */
+/* Cambia el color de los enlaces cuando el mouse pasa sobre ellos */
+a:hover {
+    color: #16a085;
+}
+
+/* Estilo para los enlaces visitados */
+a.visited {
+    color: #7f8c8d;
+}
+
+/* Cambia el estilo del botón cuando es enfocado o el ratón está sobre él */
+.hover-focus:hover, .hover-focus:focus {
+    background-color: #f39c12;
+    color: white;
+}
+
+/* Selectores de Pseudoelementos */
+/* Agrega contenido antes de un párrafo */
+.pseudo-element::before {
+    content: "Nota: ";
+    color: #c0392b;
+    font-weight: bold;
+}
+
+/* Selectores de Atributos */
+/* Estilo para todos los inputs de tipo texto */
+input[type="text"] {
+    border: 2px solid #3498db;
+    padding: 5px;
+}
+
+/* Estilo para todos los inputs de tipo email */
+input[type="email"] {
+    border: 2px solid #2ecc71;
+    padding: 5px;
+}
+
+/* Estilo para todos los inputs de tipo submit */
+input[type="submit"] {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #d35400;
+}

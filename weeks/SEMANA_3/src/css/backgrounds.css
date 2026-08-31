@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+div {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* background-color */
+.background-color-example {
+    background-color: #3498db; /* Fondo color azul */
+}
+
+/* background-image */
+.background-image-example {
+    background-image: url('https://via.placeholder.com/150'); /* Imagen de fondo */
+    background-color: #2ecc71; /* Fondo verde como respaldo */
+    height: 150px;
+}
+
+/* background-repeat */
+.background-repeat-example {
+    background-image: url('https://via.placeholder.com/50'); /* Imagen pequeña de fondo */
+    background-repeat: repeat-x; /* Repetir horizontalmente */
+    background-color: #e74c3c; /* Fondo rojo */
+    height: 150px;
+}
+
+/* background-attachment */
+.background-attachment-example {
+    background-image: url('https://via.placeholder.com/150');
+    background-attachment: fixed; /* Imagen fija */
+    background-color: #8e44ad; /* Fondo morado */
+    height: 200px;
+}
+
+/* background-position */
+.background-position-example {
+    background-image: url('https://via.placeholder.com/150');
+    background-position: center; /* Centrar imagen */
+    background-color: #f39c12; /* Fondo naranja */
+    height: 150px;
+}
+
+/* background (propiedad abreviada) */
+.background-shorthand-example {
+    background: url('https://via.placeholder.com/150') no-repeat center center / cover, #2c3e50; 
+    /* Fondo combinado: Imagen centrada, sin repetición, cubierta y color de respaldo gris oscuro */
+    height: 200px;
+}

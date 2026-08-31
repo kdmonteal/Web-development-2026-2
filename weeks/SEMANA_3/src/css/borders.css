@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.border-example {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-width: 5px;
+    border-color: #333;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Dotted Border */
+.dotted {
+    border-style: dotted;
+}
+
+/* Dashed Border */
+.dashed {
+    border-style: dashed;
+}
+
+/* Solid Border */
+.solid {
+    border-style: solid;
+}
+
+/* Double Border */
+.double {
+    border-style: double;
+}
+
+/* Groove Border */
+.groove {
+    border-style: groove;
+}
+
+/* Ridge Border */
+.ridge {
+    border-style: ridge;
+}
+
+/* Inset Border */
+.inset {
+    border-style: inset;
+}
+
+/* Outset Border */
+.outset {
+    border-style: outset;
+}
+
+/* None Border */
+.none {
+    border-style: none;
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Hidden Border */
+.hidden {
+    border-style: hidden;
+    background-color: #2ecc71;
+    color: white;
+}

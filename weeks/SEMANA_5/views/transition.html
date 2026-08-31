@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Transición</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+            transition: background-color 0.5s ease-in-out, width 0.5s ease-in-out;
+        }
+
+        .box:hover {
+            background-color: #FFC107;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

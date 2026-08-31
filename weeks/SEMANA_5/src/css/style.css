@@ -1,0 +1,140 @@
+ /* Sintaxis CSS y Selectores */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Selectores básicos */
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+}
+
+/* 1. Selectores avanzados */
+.selector-avanzado p.example {
+    color: blue;
+}
+
+.selector-avanzado p[data-info] {
+    font-weight: bold;
+}
+
+/* 2. Pseudoelementos y pseudoclases */
+.pseudo::before {
+    content: "Pseudoelemento ::before - ";
+    color: red;
+}
+
+.pseudo:nth-child(2) {
+    color: green;
+}
+
+/* 3. Propiedades de borde y fondo */
+.borde-fondo {
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #f4f4f4);
+    padding: 20px;
+}
+
+/* 4. Transiciones y animaciones */
+.transicion p {
+    transition: color 0.5s ease;
+}
+
+.transicion p:hover {
+    color: red;
+}
+
+.animacion {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation: girar 2s infinite linear;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 5. Transformaciones */
+.transformacion {
+    width: 100px;
+    height: 100px;
+    background-color: #8e44ad;
+    transition: transform 0.5s ease;
+}
+
+.transformacion:hover {
+    transform: scale(1.5) rotate(45deg);
+}
+
+/* 6. Flexbox */
+.flexbox {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+.flexbox div {
+    background-color: #2ecc71;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* 7. Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background-color: #e74c3c;
+    padding: 20px;
+    color: white;
+}
+
+.grid-layout div {
+    background-color: #c0392b;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 8. Media Queries */
+.media-queries {
+    padding: 20px;
+    background-color: #f39c12;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .media-queries {
+        background-color: #d35400;
+    }
+}
+
+/* 9. Sombras y efectos */
+.sombras-efectos p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+}
+
+/* 10. Fuentes personalizadas */
+@font-face {
+    font-family: 'OpenSans';
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+}
+
+.fuentes {
+    font-family: 'OpenSans', sans-serif;
+}

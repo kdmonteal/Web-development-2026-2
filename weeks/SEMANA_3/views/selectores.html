@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Selectores CSS</title>
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body>
+    <h1>Ejemplos de Selectores CSS</h1>
+
+    <!-- Selectores Simples -->
+    <h2 id="simple-selectors">Selectores Simples</h2>
+    <p class="simple">Este es un párrafo con una clase "simple".</p>
+    <p>Este es un párrafo sin clase.</p>
+
+    <!-- Selectores Combinadores -->
+    <h2>Seleccionadores Combinadores</h2>
+    <div class="combinator-container">
+        <p>Este párrafo es hijo directo de div.</p>
+        <p class="nested">
+            Este párrafo está anidado dentro de un div con clase "combinator-container".
+            <span>Este es un span dentro de un párrafo.</span>
+        </p>
+    </div>
+
+    <!-- Selectores de Pseudoclase -->
+    <h2>Selectores de Pseudoclase</h2>
+    <a href="#">Este es un enlace.</a>
+    <a href="#" class="visited">Este es un enlace visitado.</a>
+    <button class="hover-focus">Pasa el ratón sobre mí o haz clic</button>
+
+    <!-- Selectores de Pseudoelementos -->
+    <h2>Selectores de Pseudoelementos</h2>
+    <p class="pseudo-element">Este párrafo tiene un pseudoelemento.</p>
+
+    <!-- Selectores de Atributos -->
+    <h2>Selectores de Atributos</h2>
+    <input type="text" placeholder="Texto...">
+    <input type="email" placeholder="Correo electrónico...">
+    <input type="submit" value="Enviar">
+</body>
+</html>
