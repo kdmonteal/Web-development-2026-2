@@ -1,0 +1,263 @@
+:root {
+    /* ★★★ 新的深色主題：專業深藍色調 ★★★ */
+    /* 1. 背景漸層 (從深藍到近黑) */
+    --bg-gradient: linear-gradient(135deg, #1A2930 0%, #000000 100%);
+    /* 2. 主要顏色 (用於按鈕、分數、強調文字) */
+    --primary-color: #00A7C1;
+    /* 亮青色 */
+    /* 3. 按鈕上的文字顏色 */
+    --btn-text-on-primary: #1A2930;
+    /* 深藍色文字在亮青色按鈕上 */
+    /* 4. 提示顏色 */
+    --hint-color: #FFC300;
+    /* 暖黃色 */
+    /* 5. 一般文字顏色 */
+    --text-color: #EEEEEE;
+    /* 淺灰白色 */
+    /* 其他保持不變 */
+    --success-color: #2ECC71;
+    --error-color: #E74C3C;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    /* 全局文字變淺 */
+    padding: 15px;
+    overscroll-behavior: none;
+}
+
+.quiz-container {
+    background: #263238;
+    /* 卡片背景變深灰色 */
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #BBBBBB;
+    /* Header 文字變淺 */
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--primary-color);
+}
+
+#word-display {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-color);
+    /* 單字顏色變淺 */
+    margin: 50px 0 10px 0;
+    word-wrap: break-word;
+}
+
+.hint-section {
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.hint-btn {
+    background: transparent;
+    border: 1px solid var(--hint-color);
+    color: var(--hint-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.hint-content {
+    display: none;
+    background: #263238;
+    /* 提示框背景變深 */
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    /* 提示框文字變淺 */
+    text-align: left;
+    margin-top: 15px;
+    border-left: 4px solid var(--hint-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    background: #37474F;
+    /* 選項按鈕背景變深 */
+    border: 2px solid #455A64;
+    /* 邊框也變深 */
+    border-radius: 16px;
+    padding: 15px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    /* 選項文字變淺 */
+    cursor: pointer;
+    text-align: left;
+    font-weight: 500;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn:active {
+    transform: scale(0.98);
+    background-color: #455A64;
+}
+
+.option-btn.correct {
+    background-color: var(--success-color);
+    color: var(--btn-text-on-primary);
+    border-color: var(--success-color);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.option-btn.wrong {
+    background-color: var(--error-color);
+    color: var(--btn-text-on-primary);
+    border-color: var(--error-color);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #263238;
+    /* Modal 背景變深 */
+    border-radius: 24px;
+    z-index: 100;
+    padding: 25px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.modal h3 {
+    color: var(--text-color);
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    border: 2px solid #455A64;
+    border-radius: 16px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    resize: none;
+    background-color: #37474F;
+    color: var(--text-color);
+    /* 輸入框變深 */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* 主要按鈕樣式調整 */
+.save-btn,
+.restart-btn {
+    background: var(--primary-color);
+    color: var(--btn-text-on-primary);
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 167, 193, 0.3);
+}
+
+.cancel-btn {
+    background: #455A64;
+    color: #BBBBBB;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#loading-screen,
+#result-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #BBBBBB;
+}
+
+.spinner {
+    border: 4px solid #455A64;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#final-score {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}

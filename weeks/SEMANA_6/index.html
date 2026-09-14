@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool de Glasgow</title>
+    <link rel="stylesheet" href="./css/myStyle.css" crossorigin="kdmonteal">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <div id="settings-modal" class="modal">
+            <h3 style="color: var(--text-color);">Vocabulary List (TOEIC)</h3>
+            <p style="font-size:0.9rem; color:#BBBBBB;">Paste your full list. We will ignore headers and symbols
+                automatically.</p>
+            <textarea id="word-input" placeholder="Paste everything here..."></textarea>
+            <button class="save-btn" onclick="saveCustomWords()">Auto-Clean & Save</button>
+            <button class="cancel-btn" onclick="toggleSettings()">Cancel</button>
+        </div>
+
+        <div id="loading-screen">
+            <div class="spinner"></div>
+            <p>Fetching data...</p>
+        </div>
+
+        <div id="quiz-screen">
+            <div class="header">
+                <span>TOEIC | <span id="score">Score: 0</span></span>
+                <button class="settings-btn" onclick="toggleSettings()">⚙️</button>
+            </div>
+
+            <div id="word-display">Start</div>
+
+            <div class="hint-section">
+                <button id="hint-trigger" class="hint-btn" onclick="toggleHint()">💡 Show Hint</button>
+                <div id="hint-box" class="hint-content"></div>
+            </div>
+
+            <p style="color:#BBBBBB; font-size:0.85rem; margin-bottom:20px;" id="status-text">
+                Press Start to begin
+            </p>
+
+            <div class="options-grid" id="options-container">
+                <button class="restart-btn" onclick="startNewRound()" style="width:100%">Start Quiz</button>
+            </div>
+        </div>
+
+        <div id="result-screen">
+            <h2 style="color: var(--text-color);">Round Completed!</h2>
+            <p>Score:</p>
+            <div id="final-score">0</div>
+            <button class="restart-btn" onclick="startNewRound()">Next Round</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
