@@ -1,7 +1,14 @@
 import { createRoot } from 'react-dom/client'
 import React, {useRef, useState} from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
+
+import './App.css'
+
+function Model(props) {
+    const { scene } = useGLTF('./model/avion.gltf')
+    return <primitive object={scene} {...props} />
+}
 
 // component 3d interactive and animated
 function Box(props) {
@@ -27,6 +34,8 @@ function Box(props) {
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
         </mesh>
+
+        
     )
 }
 
@@ -39,6 +48,7 @@ export default function App() {
             <Box position={[-1.2, 0, 0]} />
             <Box position={[1.2, 0, 0]} />
             <OrbitControls />
+            <Model position={[0, -1, 0]} scale={10} />
         </Canvas>
     )
 }
