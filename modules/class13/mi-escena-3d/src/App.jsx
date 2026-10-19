@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useGLTF, useFBX } from '@react-three/drei'
+import { OrbitControls, useAnimations, useGLTF, useFBX } from '@react-three/drei'
 
 import './App.css'
 
@@ -10,8 +10,18 @@ function Model(props) {
     return <primitive object={scene} {...props} />
 }
 
+
 function ModelFBX(props) {
     const fbx = useFBX('./model/fbx/Waving.fbx')
+    const { actions } = useAnimations(fbx.animations, fbx)
+
+    useEffect(() => {
+        const action = Object.values(actions).find((candidate) => candidate.getClip().tracks.length > 0)
+        action?.reset().play()
+
+        return () => action?.stop()
+    }, [actions])
+
     return <primitive object={fbx} {...props} />
 }
 
