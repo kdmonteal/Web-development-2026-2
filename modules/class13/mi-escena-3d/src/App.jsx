@@ -1,13 +1,18 @@
 import { createRoot } from 'react-dom/client'
 import React, {useRef, useState} from 'react'
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { OrbitControls, useGLTF } from '@react-three/drei'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls, useGLTF, useFBX } from '@react-three/drei'
 
 import './App.css'
 
 function Model(props) {
-    const { scene } = useGLTF('./model/avion.gltf')
+    const { scene } = useGLTF('./model/gltf/avion.gltf')
     return <primitive object={scene} {...props} />
+}
+
+function ModelFBX(props) {
+    const fbx = useFBX('./model/fbx/Waving.fbx')
+    return <primitive object={fbx} {...props} />
 }
 
 // component 3d interactive and animated
@@ -48,7 +53,8 @@ export default function App() {
             <Box position={[-1.2, 0, 0]} />
             <Box position={[1.2, 0, 0]} />
             <OrbitControls />
-            <Model position={[0, -1, 0]} scale={10} />
+            <Model position={[0, -1, 0]} scale={30} />
+            <ModelFBX position={[0, 1, 0]} scale={1} />
         </Canvas>
     )
 }
