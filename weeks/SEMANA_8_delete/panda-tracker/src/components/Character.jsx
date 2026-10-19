@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 
 const MODEL_URL = "/models/panda.glb";
@@ -14,9 +14,28 @@ const SMOOTHING = 6;    // más alto = respuesta más rápida
 
 export default function Character(props) {
   const group = useRef();
-  const { scene } = useGLTF(MODEL_URL);
+  
+  // 1. Extraemos 'animations' además de 'scene'
+  const { scene, animations } = useGLTF(MODEL_URL);
+  
+  // 2. Usamos useAnimations para gestionar las animaciones del modelo
+  const { actions, names } = useAnimations(animations, group);
+
   const target = useRef(null);
   const base = useRef(new THREE.Euler());
+
+  // 3. Reproducir la animación en loop al cargar el componente
+  useEffect(() => {
+    if (names.length > 0) {
+      const action = actions[names[0]]; 
+      
+      if (action) {
+        action.reset().fadeIn(0.5).play();
+        // Asegurar que se repita en bucle infinito
+        action.setLoop(THREE.LoopRepeat, Infinity);
+      }
+    }
+  }, [actions, names]);
 
   // Busca el hueso de la cabeza (o el cuello); si no hay rig, gira todo el modelo
   useEffect(() => {
@@ -44,7 +63,8 @@ export default function Character(props) {
 
   return (
     <group ref={group} {...props}>
-      <primitive object={scene} />
+      {/* Sube este valor (ej. 0.5, 1, 1.5) para obligar al modelo GLB a elevarse */}
+      <primitive object={scene} position={[0, 0.5, 0]} />
     </group>
   );
 }
